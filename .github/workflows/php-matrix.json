@@ -33,5 +33,10 @@
     "debian_codename": "buster",
     "php_version": "8.0",
     "php_packages": "php8.0-cli php8.0-dom php8.0-gd php8.0-imagick php8.0-mbstring php8.0-mysql php8.0-xml"
+  },
+  {
+    "debian_codename": "buster",
+    "php_version": "8.1",
+    "php_packages": "php8.1-cli php8.1-dom php8.1-gd php8.1-imagick php8.1-mbstring php8.1-mysql php8.1-xml"
   }
 ]

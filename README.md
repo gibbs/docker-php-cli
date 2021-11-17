@@ -15,6 +15,7 @@ A minimal PHP CLI Docker image (with Composer added).
 | Buster  | 7.3         | genv/php-cli:7.3 |
 | Buster  | 7.4         | genv/php-cli:7.4 |
 | Buster  | 8.0         | genv/php-cli:8.0 |
+| Buster  | 8.1         | genv/php-cli:8.1 |
 
 ## Example Usage
 
