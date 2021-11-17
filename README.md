@@ -36,6 +36,12 @@ Get the Composer version
 docker run --entrypoint composer genv/php-cli:7.3 --version
 ```
 
+As composer is written in PHP you can alternatively run it directly:
+
+```bash
+docker run genv/php-cli:7.3 /usr/local/bin/composer --version
+```
+
 Install PHPUnit
 
 ```bash
