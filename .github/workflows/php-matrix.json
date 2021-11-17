@@ -7,31 +7,31 @@
   {
     "debian_codename": "stretch",
     "php_version": "7.0",
-    "php_packages": "php7.0-cli php7.0-gd php7.0-imagick php7.0-mysql"
+    "php_packages": "php7.0-cli php7.0-dom php7.0-gd php7.0-imagick php7.0-mbstring php7.0-mysql php7.0-xml"
   },
   {
     "debian_codename": "stretch",
     "php_version": "7.1",
-    "php_packages": "php7.1-cli php7.1-gd php7.1-imagick php7.1-mysql"
+    "php_packages": "php7.1-cli php7.1-dom php7.1-gd php7.1-imagick php7.1-mbstring php7.1-mysql php7.1-xml"
   },
   {
     "debian_codename": "stretch",
     "php_version": "7.2",
-    "php_packages": "php7.2-cli php7.2-gd php7.2-imagick php7.2-mysql"
+    "php_packages": "php7.2-cli php7.2-dom php7.2-gd php7.2-imagick php7.2-mbstring php7.2-mysql php7.2-xml"
   },
   {
     "debian_codename": "buster",
     "php_version": "7.3",
-    "php_packages": "php7.3-cli php7.3-gd php7.3-imagick php7.3-mysql"
+    "php_packages": "php7.3-cli php7.3-dom php7.3-gd php7.3-imagick php7.3-mbstring php7.3-mysql php7.3-xml"
   },
   {
     "debian_codename": "buster",
     "php_version": "7.4",
-    "php_packages": "php7.4-cli php7.4-gd php7.4-imagick php7.4-mysql"
+    "php_packages": "php7.4-cli php7.4-dom php7.4-gd php7.4-imagick php7.4-mbstring php7.4-mysql php7.4-xml"
   },
   {
     "debian_codename": "buster",
     "php_version": "8.0",
-    "php_packages": "php8.0-cli php8.0-gd php8.0-imagick php8.0-mysql"
+    "php_packages": "php8.0-cli php8.0-dom php8.0-gd php8.0-imagick php8.0-mbstring php8.0-mysql php8.0-xml"
   }
 ]

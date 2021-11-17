@@ -20,7 +20,7 @@ build-php70:
 	docker build \
 		--no-cache \
 		--build-arg DEBIAN_CODENAME=stretch \
-		--build-arg PHP_PACKAGES="php7.0-cli php7.0-gd php7.0-imagick php7.0-mysql" \
+		--build-arg PHP_PACKAGES="php7.0-cli php7.0-dom php7.0-gd php7.0-imagick php7.0-mbstring php7.0-mysql php7.0-xml" \
 		-t $(BUILD_NAME):7.0 \
 		-t $(BUILD_NAME):7.0-$(BUILD_DATE) \
 	.;
@@ -31,7 +31,7 @@ build-php71:
 	docker build \
 		--no-cache \
 		--build-arg DEBIAN_CODENAME=stretch \
-		--build-arg PHP_PACKAGES="php7.1-cli php7.1-gd php7.1-imagick php7.1-mysql" \
+		--build-arg PHP_PACKAGES="php7.1-cli php7.1-dom php7.1-gd php7.1-imagick php7.1-mbstring php7.1-mysql php7.1-xml" \
 		-t $(BUILD_NAME):7.1 \
 		-t $(BUILD_NAME):7.1-$(BUILD_DATE) \
 	.;
@@ -42,7 +42,7 @@ build-php72:
 	docker build \
 		--no-cache \
 		--build-arg DEBIAN_CODENAME=stretch \
-		--build-arg PHP_PACKAGES="php7.2-cli php7.2-gd php7.2-imagick php7.2-mysql" \
+		--build-arg PHP_PACKAGES="php7.2-cli php7.2-dom php7.2-gd php7.2-imagick php7.2-mbstring php7.2-mysql php7.2-xml" \
 		-t $(BUILD_NAME):7.2 \
 		-t $(BUILD_NAME):7.2-$(BUILD_DATE) \
 	.;
@@ -53,7 +53,7 @@ build-php73:
 	docker build \
 		--no-cache \
 		--build-arg DEBIAN_CODENAME=buster \
-		--build-arg PHP_PACKAGES="php7.3-cli php7.3-gd php7.3-imagick php7.3-mysql" \
+		--build-arg PHP_PACKAGES="php7.3-cli php7.3-dom php7.3-gd php7.3-imagick php7.3-mbstring php7.3-mysql php7.3-xml" \
 		-t $(BUILD_NAME):7.3 \
 		-t $(BUILD_NAME):7.3-$(BUILD_DATE) \
 	.;
@@ -64,7 +64,7 @@ build-php74:
 	docker build \
 		--no-cache \
 		--build-arg DEBIAN_CODENAME=buster \
-		--build-arg PHP_PACKAGES="php7.4-cli php7.4-gd php7.4-imagick php7.4-mysql" \
+		--build-arg PHP_PACKAGES="php7.4-cli php7.4-dom php7.4-gd php7.4-imagick php7.4-mbstring php7.4-mysql php7.4-xml" \
 		-t $(BUILD_NAME):7.4 \
 		-t $(BUILD_NAME):7.4-$(BUILD_DATE) \
 	.;
@@ -75,7 +75,7 @@ build-php80:
 	docker build \
 		--no-cache \
 		--build-arg DEBIAN_CODENAME=buster \
-		--build-arg PHP_PACKAGES="php8.0-cli php8.0-gd php8.0-imagick php8.0-mysql" \
+		--build-arg PHP_PACKAGES="php8.0-cli php8.0-dom php8.0-gd php8.0-imagick php8.0-mbstring php8.0-mysql php8.0-xml" \
 		-t $(BUILD_NAME):8.0 \
 		-t $(BUILD_NAME):8.0-$(BUILD_DATE) \
 		-t $(BUILD_NAME):latest \
