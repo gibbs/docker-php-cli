@@ -1,8 +1,8 @@
 BUILD_NAME   := genv/php-cli
 BUILD_DATE   := $(shell date -u "+%Y%m%dT%H%M%SZ")
-PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0
+PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1
 
-build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 push
+build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 build-php81 push
 .PHONY: build
 
 build-php56:
@@ -82,6 +82,18 @@ build-php80:
 	.;
 .PHONY: build-php80
 .SILENT: build-php80
+
+build-php81:
+	docker build \
+		--no-cache \
+		--build-arg DEBIAN_CODENAME=buster \
+		--build-arg PHP_PACKAGES="php8.1-cli php8.1-dom php8.1-gd php8.1-imagick php8.1-mbstring php8.1-mysql php8.1-xml" \
+		-t $(BUILD_NAME):8.1 \
+		-t $(BUILD_NAME):8.1-$(BUILD_DATE) \
+		-t $(BUILD_NAME):latest \
+	.;
+.PHONY: build-php81
+.SILENT: build-php81
 
 push:
 	for PHP_VERSION in $(PHP_VERSIONS); do \
