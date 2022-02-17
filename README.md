@@ -2,13 +2,13 @@
 
 ![Docker](https://github.com/Gibbs/docker-php-cli/actions/workflows/build.yml/badge.svg)
 
-A minimal PHP CLI Docker image (with Composer added).
+A minimal general purpose PHP CLI Docker image (with Composer added).
 
 ## Versions
 
 | Release | PHP Version | Tag              |
 |---------|-------------|------------------|
-| Jessie  | 5.6         | genv/php-cli:5.6 |
+| Stretch | 5.6         | genv/php-cli:5.6 |
 | Stretch | 7.0         | genv/php-cli:7.0 |
 | Stretch | 7.1         | genv/php-cli:7.1 |
 | Stretch | 7.2         | genv/php-cli:7.2 |
