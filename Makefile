@@ -1,6 +1,6 @@
 BUILD_NAME   := genv/php-cli
 BUILD_DATE   := $(shell date -u "+%Y%m%dT%H%M%SZ")
-PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1
+PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2
 
 build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 build-php81 push
 .PHONY: build
@@ -264,7 +264,6 @@ build-php80:
 			php8.0-lz4 \
 			php8.0-mbstring \
 			php8.0-mcrypt \
-			php8.0-mcrypt \
 			php8.0-oauth \
 			php8.0-pcov \
 			php8.0-pgsql \
@@ -308,7 +307,6 @@ build-php81:
 			php8.1-lz4 \
 			php8.1-mbstring \
 			php8.1-mcrypt \
-			php8.1-mcrypt \
 			php8.1-oauth \
 			php8.1-pcov \
 			php8.1-pgsql \
@@ -331,6 +329,48 @@ build-php81:
 	.;
 .PHONY: build-php81
 .SILENT: build-php81
+
+build-php82:
+	docker build \
+		--no-cache \
+		--build-arg DEBIAN_CODENAME=buster \
+		--build-arg PHP_PACKAGES="\
+			php8.2-bcmath \
+			php8.2-bcmath \
+			php8.2-cli \
+			php8.2-common \
+			php8.2-curl \
+			php8.2-decimal \
+			php8.2-gd \
+			php8.2-imagick \
+			php8.2-imap \
+			php8.2-inotify \
+			php8.2-inotify \
+			php8.2-ldap \
+			php8.2-lz4 \
+			php8.2-mbstring \
+			php8.2-oauth \
+			php8.2-pcov \
+			php8.2-pgsql \
+			php8.2-pgsql \
+			php8.2-psr \
+			php8.2-readline \
+			php8.2-redis \
+			php8.2-rrd \
+			php8.2-soap \
+			php8.2-sqlite3 \
+			php8.2-uuid \
+			php8.2-xml \
+			php8.2-xmlrpc \
+			php8.2-xsl \
+			php8.2-yaml \
+			php8.2-zip" \
+		-t $(BUILD_NAME):8.2 \
+		-t $(BUILD_NAME):8.2-$(BUILD_DATE) \
+		-t $(BUILD_NAME):latest \
+	.;
+.PHONY: build-php82
+.SILENT: build-php82
 
 push:
 	for PHP_VERSION in $(PHP_VERSIONS); do \
