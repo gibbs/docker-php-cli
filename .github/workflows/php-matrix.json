@@ -12,6 +12,6 @@
   {
     "debian_codename": "buster",
     "php_version": "8.2",
-    "php_packages": "php8.2-bcmath php8.2-bcmath php8.2-cli php8.2-common php8.2-curl php8.2-decimal php8.2-gd php8.2-imagick php8.2-imap php8.2-inotify php8.2-inotify php8.2-ldap php8.2-lz4 php8.2-mbstring php8.2-mcrypt php8.2-oauth php8.2-pcov php8.2-pgsql php8.2-pgsql php8.2-psr php8.2-readline php8.2-redis php8.2-rrd php8.2-soap php8.2-sqlite3 php8.2-uuid php8.2-xml php8.2-xmlrpc php8.2-xsl php8.2-yaml php8.2-zip"
+    "php_packages": "php8.2-bcmath php8.2-bcmath php8.2-cli php8.2-common php8.2-curl php8.2-decimal php8.2-gd php8.2-imagick php8.2-imap php8.2-inotify php8.2-inotify php8.2-ldap php8.2-lz4 php8.2-mbstring php8.2-oauth php8.2-pcov php8.2-pgsql php8.2-pgsql php8.2-psr php8.2-readline php8.2-redis php8.2-rrd php8.2-soap php8.2-sqlite3 php8.2-uuid php8.2-xml php8.2-xmlrpc php8.2-xsl php8.2-yaml php8.2-zip"
   }
 ]
