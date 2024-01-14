@@ -247,7 +247,7 @@ build-php74:
 build-php80:
 	docker build \
 		--no-cache \
-		--build-arg DEBIAN_CODENAME=bookworm \
+		--build-arg DEBIAN_CODENAME=buster \
 		--build-arg PHP_PACKAGES="\
 			php8.0-bcmath \
 			php8.0-cli \
