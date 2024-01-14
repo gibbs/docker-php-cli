@@ -1,8 +1,8 @@
 BUILD_NAME   := genv/php-cli
 BUILD_DATE   := $(shell date -u "+%Y%m%dT%H%M%SZ")
-PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2
+PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2 8.3
 
-build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 build-php81 push
+build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 build-php81 build-php82 build-php83 push
 .PHONY: build
 
 build-php56:
@@ -250,7 +250,6 @@ build-php80:
 		--build-arg DEBIAN_CODENAME=buster \
 		--build-arg PHP_PACKAGES="\
 			php8.0-bcmath \
-			php8.0-bcmath \
 			php8.0-cli \
 			php8.0-common \
 			php8.0-curl \
@@ -336,7 +335,6 @@ build-php82:
 		--build-arg DEBIAN_CODENAME=buster \
 		--build-arg PHP_PACKAGES="\
 			php8.2-bcmath \
-			php8.2-bcmath \
 			php8.2-cli \
 			php8.2-common \
 			php8.2-curl \
@@ -371,6 +369,45 @@ build-php82:
 	.;
 .PHONY: build-php82
 .SILENT: build-php82
+
+build-php83:
+	docker build \
+		--no-cache \
+		--build-arg DEBIAN_CODENAME=bookworm \
+		--build-arg PHP_PACKAGES="\
+			php8.3-bcmath \
+			php8.3-cli \
+			php8.3-common \
+			php8.3-curl \
+			php8.3-gd \
+			php8.3-imagick \
+			php8.3-imap \
+			php8.3-inotify \
+			php8.3-inotify \
+			php8.3-ldap \
+			php8.3-mbstring \
+			php8.3-oauth \
+			php8.3-pcov \
+			php8.3-pgsql \
+			php8.3-pgsql \
+			php8.3-psr \
+			php8.3-readline \
+			php8.3-redis \
+			php8.3-rrd \
+			php8.3-soap \
+			php8.3-sqlite3 \
+			php8.3-uuid \
+			php8.3-xml \
+			php8.3-xmlrpc \
+			php8.3-xsl \
+			php8.3-yaml \
+			php8.3-zip" \
+		-t $(BUILD_NAME):8.3 \
+		-t $(BUILD_NAME):8.3-$(BUILD_DATE) \
+		-t $(BUILD_NAME):latest \
+	.;
+.PHONY: build-php83
+.SILENT: build-php83
 
 push:
 	for PHP_VERSION in $(PHP_VERSIONS); do \
