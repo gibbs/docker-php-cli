@@ -1,8 +1,8 @@
 BUILD_NAME   := genv/php-cli
 BUILD_DATE   := $(shell date -u "+%Y%m%dT%H%M%SZ")
-PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2 8.3
+PHP_VERSIONS := 5.6 7.0 7.1 7.2 7.3 7.4 8.0 8.1 8.2 8.3 8.4
 
-build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 build-php81 build-php82 build-php83 push
+build: build-php56 build-php70 build-php71 build-php72 build-php73 build-php74 build-php80 build-php81 build-php82 build-php83 build-php84 push
 .PHONY: build
 
 build-php56:
@@ -408,6 +408,45 @@ build-php83:
 	.;
 .PHONY: build-php83
 .SILENT: build-php83
+
+build-php84:
+	docker build \
+		--no-cache \
+		--build-arg DEBIAN_CODENAME=bookworm \
+		--build-arg PHP_PACKAGES="\
+			php8.4-bcmath \
+			php8.4-cli \
+			php8.4-common \
+			php8.4-curl \
+			php8.4-gd \
+			php8.4-imagick \
+			php8.4-imap \
+			php8.4-inotify \
+			php8.4-inotify \
+			php8.4-ldap \
+			php8.4-mbstring \
+			php8.4-oauth \
+			php8.4-pcov \
+			php8.4-pgsql \
+			php8.4-pgsql \
+			php8.4-psr \
+			php8.4-readline \
+			php8.4-redis \
+			php8.4-rrd \
+			php8.4-soap \
+			php8.4-sqlite3 \
+			php8.4-uuid \
+			php8.4-xml \
+			php8.4-xmlrpc \
+			php8.4-xsl \
+			php8.4-yaml \
+			php8.4-zip" \
+		-t $(BUILD_NAME):8.4 \
+		-t $(BUILD_NAME):8.4-$(BUILD_DATE) \
+		-t $(BUILD_NAME):latest \
+	.;
+.PHONY: build-php84
+.SILENT: build-php84
 
 push:
 	for PHP_VERSION in $(PHP_VERSIONS); do \

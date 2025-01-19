@@ -18,6 +18,7 @@ A minimal general purpose PHP CLI Docker image (with Composer added).
 | Buster  | 8.1         | genv/php-cli:8.1 |
 | Buster  | 8.2         | genv/php-cli:8.2 |
 | Bookworm | 8.3         | genv/php-cli:8.3 |
+| Bookworm | 8.4         | genv/php-cli:8.4 |
 
 ## Example Usage
 
