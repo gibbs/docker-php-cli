@@ -5,7 +5,7 @@ on: [workflow_dispatch]
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     outputs:
       build-date: ${{ steps.set-build-date.outputs.build-date }}
       matrix: ${{ steps.set-matrix.outputs.matrix }}
@@ -22,7 +22,7 @@ jobs:
 
   lint:
     name: Lint Dockerfile
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
       - uses: hadolint/hadolint-action@v3.0.0
@@ -32,7 +32,7 @@ jobs:
   build-test:
     name: Docker Build Test
     needs: setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         versions: ${{ fromJSON(needs.setup.outputs.matrix) }}
@@ -65,7 +65,7 @@ jobs:
 
   release:
     name: Release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     needs: [setup, build-test]
     if: github.ref == 'refs/heads/master'
     strategy:
